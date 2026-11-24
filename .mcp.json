@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "seedlab": {
+      "type": "http",
+      "url": "https://w0rse.xyz/seedlab/mcp/data"
+    }
+  }
+}
