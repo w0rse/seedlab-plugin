@@ -117,6 +117,10 @@ The process was tested with Claude Opus as the building model. Sonnet, under the
 
 The plugin itself has been run end to end in Claude Code on a dashboard, and the same process, through an earlier form of the connector, rebuilt the front page of a live product.
 
+## Licence
+
+The files in this repository are under the MIT licence; see [LICENSE](LICENSE). The Seed Lab connector is a service and is not part of the repository.
+
 ## Questions and faults
 
 Open an issue at https://github.com/w0rse/seedlab-plugin/issues. Issues are public: do not put private data, or screenshots of pages that are not public, into one.

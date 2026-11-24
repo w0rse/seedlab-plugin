@@ -9,6 +9,7 @@
   },
   "homepage": "https://w0rse.xyz/seedlab/",
   "repository": "https://github.com/w0rse/seedlab-plugin",
+  "license": "MIT",
   "keywords": [
     "design",
     "redesign",
