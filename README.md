@@ -65,9 +65,9 @@ It was built and tried in Claude Code. It has not yet been tried in Claude's cha
 
 - `skills/redesign-page/SKILL.md`: the process, step by step.
 - `skills/redesign-page/references/`: the instructions Claude follows for the sketch, the build and the finishing, as templates; what each further take asks for; and how to change colours on a page that is already built.
-- `.mcp.json`: the address of the Seed Lab connector, `https://w0rse.xyz/seedlab/mcp/data`.
+- `.mcp.json`: the address of the Seed Lab connector, `https://w0rse.xyz/seedlab/mcp/data`, and one fixed header, `X-Seedlab-Skill: bundled`, which tells the connector that Claude already has the skill from this plugin.
 
-Every instruction Claude follows is in these files, where you can read it. The connector returns data only: the objects and colours that were drawn, the values for the object you chose, and the director's notes.
+Every instruction Claude follows is in these files, where you can read it. The connector's tools return data only: the objects and colours that were drawn, the values for the object you chose, and the director's notes. To a client that connects without this plugin and can load skills from MCP servers, the connector also serves this same skill, file for file, so that it works there too.
 
 ## The connector's tools
 

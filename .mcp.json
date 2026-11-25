@@ -2,7 +2,10 @@
   "mcpServers": {
     "seedlab": {
       "type": "http",
-      "url": "https://w0rse.xyz/seedlab/mcp/data"
+      "url": "https://w0rse.xyz/seedlab/mcp/data",
+      "headers": {
+        "X-Seedlab-Skill": "bundled"
+      }
     }
   }
 }
