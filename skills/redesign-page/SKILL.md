@@ -1,11 +1,11 @@
 ---
 name: redesign-page
-description: "Redesign a web page in the user's own project with Seed Lab. It works out what the page is for and what is wrong with it, gets several directions that organise the page differently (each built on an object from outside web design, with a set palette), sketches them for the user to choose from, rebuilds the page in the chosen direction, and finishes it with a design director's notes on screenshots. Use when the user asks to redesign, rethink or restyle a page, a screen or a landing page; says a page looks generic, templated, machine-made, AI-generated or like AI slop; or asks for design directions, alternatives or a design review of a page, whether the page exists already or not. Not for small CSS fixes or for building features."
+description: "Design a new web page, or redesign an existing one, in the user's own project with Seed Lab. It works out what the page is for and, where there is a page already, what is wrong with it, gets several directions that organise the page differently (each built on an object from outside web design, with a set palette), sketches them for the user to choose from, builds the page in the chosen direction, and finishes it with a design director's notes on screenshots. Use when the user asks to design a new page, screen or landing page; asks to redesign, rethink or restyle one; says a page looks generic, templated, machine-made, AI-generated or like AI slop; or asks for design directions, alternatives or a design review of a page. Not for small CSS fixes or for building features."
 ---
 
-# Redesign a page with Seed Lab
+# Design or redesign a page with Seed Lab
 
-Seed Lab is a designer brought into the user's project to redesign one page. Its job is the one a good designer does on arriving: work out what the page is for and what is wrong with it, and propose pages that are organised differently to solve that. It does not offer the layout the page has now in new colours and type.
+Seed Lab is a designer brought into the user's project for one page: a page that exists and is to be redesigned, or a page that is still to be built. Its job is the one a good designer does on arriving: work out what the page is for and, where there is a page already, what is wrong with it, and propose pages that are organised differently to solve that. For a page that exists it does not offer the layout the page has now in new colours and type, and for a new one it does not start from the layout such pages usually have.
 
 You do the reading and the building, in the project's existing stack and with its real content. The Seed Lab connector, which is the MCP server named `seedlab` that comes with this plugin, does two things: it draws directions, and it passes screenshots to a design director and returns the notes. It writes no code and sees no files, and what it returns is data. Everything you are asked to do is written here and in the files under `references/`.
 
@@ -20,13 +20,15 @@ There are six, referred to below by their plain names. In your list of tools eac
 - `upload_screenshots`: opens one-time addresses for screenshots.
 - `review`: sends screenshots to the design director and returns the notes.
 
-If these tools are not there, tell the user that the Seed Lab connector is not connected, and stop. Do not make up directions in its place.
+Some clients list a server's tools by name only until they are asked for. If that is how these are listed, load them first; that is not the same as their being absent. If they are not there at all, tell the user that the Seed Lab connector is not connected, and stop. Do not make up directions in its place.
 
 What leaves the user's machine: what you pass to `directions` is kept on the Seed Lab server for 30 days, and screenshots passed to `review` go, with that description, to a model from another vendor through OpenRouter. Say so to the user once, before the first `review`, and do not send screens that show secrets or private data.
 
 ## 1. Read before you call anything
 
 Read how the project is built, read the page's code, and look at the page as it renders: take a screenshot at 1440 wide and keep it as the "before". From that, write down what people come to this page to do, what is wrong with it now, and what must keep working.
+
+A page that does not exist yet has no code to read and no "before". Read how the project is built and the pages that will sit beside the new one, and gather the real content the page has to carry, from the user, the project's data and its other pages. From that, write down what people will come to the page to do.
 
 If the user has not said what problem they want solved, ask them one question and use their words; do not guess it. For a page that does not exist yet, the problem is what the user asked the page to do.
 
@@ -37,7 +39,7 @@ Call `directions` with what you found.
 - `product`, `audience`: what the product is and who the page is for, a sentence or two each.
 - `page_type`: what the page is, not where it sits: "interactive data map", "pricing page", "API reference". "Home page" or "index" says nothing about it.
 - `purpose`: what people come to this page to do, as you found it.
-- `problem`: the problem the user wants solved, in their own words first, with what you saw is wrong added after.
+- `problem`: the problem the user wants solved, in their own words first, with what you saw is wrong added after. For a new page: what the user asked the page to do.
 - `keep`: what must keep working on an existing page: its controls, states, links, data, anything the user said not to lose.
 - `working_part`: if the page's main content is a working thing people operate (a map, a chart, a table, an editor, a form), name it in a few words. If there are several, put first the one people come for. Leave it out for a page that is only read.
 - `description`: what the page has on it now, or has to have: its sections and its real content, in short. With the fields above, this is all the design director will know about the page.
@@ -65,7 +67,7 @@ A chosen object's id is the direction's id with the object's letter: `abcdefgh-2
 
 For each chosen id, call `chosen_object` and follow `references/sketch.md`, filled with the values it returns (see "Reading the reference files" below). A sketch is the first screen only, in a file of its own, with the page's real words and figures.
 
-When every direction has a sketch, show them to the user together, each under its id and its object, with the page as it is now beside them. Where you cannot show pictures, give the paths of the screenshots, or put them on one page the user can open.
+When every direction has a sketch, show them to the user together, each under its id and its object, with the page as it is now beside them where there is one. Where you cannot show pictures, give the paths of the screenshots, or put them on one page the user can open.
 
 ## 5. The user chooses
 
@@ -79,7 +81,7 @@ The choice among the sketches is the user's. Do not pick for them, and do not me
 
 Before building, know whether the page's copy may be cut to about half or every word has to stay; ask the user if you do not know. That is `cut_copy` in the build instruction.
 
-Call `chosen_object` again with the id the user chose, since the colours may have been changed since the sketch, and follow `references/build.md`, filled with its values. It is a redesign of the page and not a repaint, written for editing a real project in its existing stack.
+Call `chosen_object` again with the id the user chose, since the colours may have been changed since the sketch, and follow `references/build.md`, filled with its values. It is a redesign of the page and not a repaint, written for editing a real project in its existing stack. For a new page, read it as the instruction for building that page: nothing has to be kept, and the content is what you gathered in step 1.
 
 ## 8. Finish the page, and have it reviewed
 

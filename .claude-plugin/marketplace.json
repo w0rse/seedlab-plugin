@@ -1,6 +1,6 @@
 {
   "name": "seedlab",
-  "description": "Seed Lab: one plugin, for redesigning a web page in your own project.",
+  "description": "Seed Lab: one plugin, for designing a new web page or redesigning one in your own project.",
   "owner": {
     "name": "Seed Lab"
   },
@@ -8,7 +8,7 @@
     {
       "name": "seedlab",
       "source": "./",
-      "description": "Redesign a page in your own codebase so it stops looking AI-generated. Seed Lab draws several directions that reorganise the page, each built on an object from outside web design with a set palette; Claude sketches them for you to choose from, rebuilds the page in your stack, and a second model reviews the screenshots. The wording behind it was picked in blind votes."
+      "description": "Design a new page, or redesign one you have, in your own codebase, so it does not look AI-generated. Seed Lab draws several directions for the page, each built on an object from outside web design with a set palette; Claude sketches them for you to choose from, builds the page in your stack, and a second model reviews the screenshots. The wording behind it was picked in blind votes."
     }
   ]
 }

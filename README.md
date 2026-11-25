@@ -1,8 +1,8 @@
 # Seed Lab
 
-Seed Lab is a Claude plugin that redesigns one page in your own codebase, so that it stops looking like the page every agent builds. It holds one skill, `redesign-page`, and one connector, the Seed Lab server.
+Seed Lab is a Claude plugin that designs a new page, or redesigns one you have, in your own codebase, so that it does not look like the page every agent builds. It holds one skill, `redesign-page`, and one connector, the Seed Lab server.
 
-It is for people who build with Claude in a real project and have a page that works and looks generic: a landing page, a pricing page, a dashboard, a tool. It does not repaint the layout you have. It works out what the page is for and proposes pages that are organised differently.
+It is for people who build with Claude in a real project and have a page still to build, or a page that works and looks generic: a landing page, a pricing page, a sign-up page, a dashboard, a tool. It does not start from the layout such pages usually have, and it does not repaint the layout you have. It works out what the page is for and proposes pages that are organised differently.
 
 Three things set it apart from other design skills:
 
@@ -12,11 +12,11 @@ Three things set it apart from other design skills:
 
 ## What happens
 
-1. Claude reads your project and the page, and says what the page is for and what is wrong with it. If you have not said what problem you want solved, it asks you once.
+1. Claude reads your project and the page, and says what the page is for and what is wrong with it. For a page that does not exist yet, it reads the project and gathers the content the page has to carry. If you have not said what problem you want solved, it asks you once.
 2. Seed Lab draws directions, four unless you ask otherwise.
-3. Claude builds a quick first screen of each, with your page's real words and figures, and shows them together with the page as it is now.
+3. Claude builds a quick first screen of each, with your page's real words and figures, and shows them together, beside the page as it is now when there is one.
 4. You choose. Claude does not choose for you, and does not merge two directions into one.
-5. Claude rebuilds the page in the direction you chose, in the stack your project already uses, keeping everything you said must keep working.
+5. Claude builds the page in the direction you chose, in the stack your project already uses. For a page you had, that is a rebuild which keeps everything you said must keep working.
 6. Claude sends screenshots to the design director and acts on the notes, for up to three rounds.
 
 The colours of a direction can be shown, redrawn or tuned at any point, before or after the page is built.
@@ -55,7 +55,7 @@ Things you can say on the way: "three directions, not four"; "further takes on t
 
 ## What it needs
 
-- A project Claude can read and edit, with the page rendering on your machine. The server cannot reach your machine, so Claude takes the screenshots.
+- A project Claude can read and edit, in which the page renders, or will render, on your machine. The server cannot reach your machine, so Claude takes the screenshots.
 - A way for Claude to take a screenshot of a page: a browser tool, or a headless browser it can run.
 - Claude Opus as the building model, if you have the choice. The process was tested with it; see "What was tested".
 
@@ -115,7 +115,7 @@ The numbered direction in the build instruction, the finishing instruction and t
 
 The process was tested with Claude Opus as the building model. Sonnet, under the same instructions, took the borrowed object too far and was picked less often.
 
-The plugin itself has been run end to end in Claude Code on a dashboard, and the same process, through an earlier form of the connector, rebuilt the front page of a live product.
+The pages in the vote were all built new, each from a brief and a pack of content; none was a redesign of a page that existed. The plugin itself has been run end to end in Claude Code twice, once on a dashboard that existed and once on a sign-up page that did not, each time with nobody answering and the builder choosing in the user's place. The same process, through an earlier form of the connector, rebuilt the front page of a live product.
 
 ## Licence
 
