@@ -2,7 +2,7 @@
   "name": "seedlab",
   "description": "Seed Lab: one plugin, for designing a new web page or redesigning one in your own project.",
   "owner": {
-    "name": "w0rse"
+    "name": "Seed Lab"
   },
   "plugins": [
     {
